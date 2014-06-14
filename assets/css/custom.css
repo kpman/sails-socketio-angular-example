@@ -1,0 +1,17 @@
+.messages {
+  padding: 10px 5px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.message {
+  margin-top: 5px;
+}
+.message:nth-child(2n) {
+  background: #fff;
+}
+.message:nth-child(2n+1) {
+  background: #eee8de;
+}
+.message .name:after {
+  content: "說：";
+}

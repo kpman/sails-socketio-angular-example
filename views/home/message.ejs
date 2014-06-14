@@ -1,0 +1,42 @@
+
+<link rel="stylesheet" href="http://sailsjs.org/styles/fonts.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" >
+<link rel="stylesheet" href="css/custom.css" />
+<style>
+    
+</style>
+<!--[if IE 7]>
+    <style>
+    .getting-started li{overflow:visible;clear:both}.delete{width:690px}
+    </style>
+<![endif]-->
+
+<div class="container" ng-controller="mainController">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>message</h2>
+    </div>
+  </div>
+  <h3>即時通訊</h3>
+  <div class="row">
+    <div class="col-md-12 bg-info">
+      <div class="messages" id="messages">
+        <div class="message clearfix" ng-repeat="message in messages">
+          <p><span class="name">{{ message.name }}</span>{{ message.text }}</p>
+        </div>
+      </div>
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label for="user_id" class="control-label">姓名：</label>
+          <input type="text" name="user_id" class="form-control" ng-model="user_id">
+        </div>
+      </form>
+      <form ng-submit="submit()" name="messageFrom">
+        <label for="text" class="control-label">訊息：</label>
+        <input type="hidden" name="name" value="{{user_id}}" ng-model="user_id">
+        <input type="text" name="text" class="form-control" ng-model="text" required>
+        <input type="submit" value="送出" class="btn btn-primary pull-right ">
+      </form>
+    </div>
+  </div>
+</div>
